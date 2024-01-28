@@ -3,13 +3,17 @@
 import { useState, lazy } from 'react'
 import { Tab } from '@headlessui/react'
 import { joinClassName } from '@/services/joinClassName'
-import type { TabCategory } from './type'
+import { initialTimeLineInfo } from '@/const/timeLine'
 
-const Career = lazy(() => import('@/components/careere'))
+import type { TabCategory } from './type'
+import type { TimeLine } from '../timeLine/type'
+
+const TimeLine = lazy(() => import('@/components/timeLine'))
 
 const Tabs = (): JSX.Element => {
-  let [categories] = useState<TabCategory>({
-    Career: <Career />,
+  const [timeLine, setTimeLine] = useState<TimeLine[]>(initialTimeLineInfo)
+  const [categories, setCategory] = useState<TabCategory>({
+    Career: <TimeLine {...{ timeLine }} />,
   })
 
   return (
