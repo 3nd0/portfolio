@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { lazy } from 'react'
+
+const Tabs = lazy(() => import('@/components/tabs'))
 
 const Header = (): JSX.Element => {
   return (
@@ -64,6 +67,11 @@ const Header = (): JSX.Element => {
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* tabs */}
+      <div className="mx-72 px-10 flex flex-col">
+        <Tabs />
       </div>
     </div>
   )
