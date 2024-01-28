@@ -1,13 +1,15 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, lazy } from 'react'
 import { Tab } from '@headlessui/react'
 import { joinClassName } from '@/services/joinClassName'
 import type { TabCategory } from './type'
 
+const Career = lazy(() => import('@/components/careere'))
+
 const Tabs = (): JSX.Element => {
   let [categories] = useState<TabCategory>({
-    Career: <button>test</button>,
+    Career: <Career />,
   })
 
   return (
