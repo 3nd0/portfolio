@@ -1,6 +1,10 @@
 import { Fragment } from 'react'
+import { lazy } from 'react'
+
 import type { TimeLine } from './type'
-import Link from 'next/link'
+import type { DisclosuresType } from '../disclosures/type'
+
+const Disclosures = lazy(() => import('@/components/disclosures'))
 
 const TimeLine = (props: { timeLine: TimeLine[] }): JSX.Element => {
   const { timeLine } = props
@@ -23,17 +27,18 @@ const TimeLine = (props: { timeLine: TimeLine[] }): JSX.Element => {
             </h3>
 
             {/* description section */}
-            <p className="mb-4 text-base font-normal text-gray-500 ">
+            <p className="mb-4 text-base font-normal text-gray-500 whitespace-pre-wrap">
               {contents.description}
             </p>
 
-            {/* anchor */}
-            <Link
-              href="/detail"
-              className='"inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700'
-            >
-              Learn more
-            </Link>
+            {/* disclosure */}
+            <div className="w-full max-w-md rounded-2xl bg-white p-2">
+              {contents.detail.map((element: DisclosuresType, id: number) => (
+                <Fragment key={id}>
+                  <Disclosures {...element} />
+                </Fragment>
+              ))}
+            </div>
           </li>
         </Fragment>
       ))}
