@@ -80,10 +80,7 @@ const Tabs = (): JSX.Element => {
         {Object.values(categories).map((posts, idx) => (
           <Tab.Panel
             key={idx}
-            className={joinClassName(
-              'rounded-xl bg-white p-3',
-              'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
-            )}
+            className="rounded-xl bg-white p-3 ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
           >
             <ul>
               {posts.map((post) => (
