@@ -9,11 +9,13 @@ import type { TabCategory } from './type'
 import type { TimeLine } from '../timeLine/type'
 
 const TimeLine = lazy(() => import('@/components/timeLine'))
+const List = lazy(() => import('@/components/list'))
 
 const Tabs = (): JSX.Element => {
   const [timeLine, setTimeLine] = useState<TimeLine[]>(initialTimeLineInfo)
   const [categories, setCategory] = useState<TabCategory>({
     Career: <TimeLine {...{ timeLine }} />,
+    Link: <List />,
   })
 
   return (
