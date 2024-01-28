@@ -4,7 +4,7 @@ import { lazy } from 'react'
 
 const Tabs = lazy(() => import('@/components/tabs'))
 
-const Header = (): JSX.Element => {
+const Profile = (): JSX.Element => {
   return (
     <div className="flex flex-col gap-10">
       <div className="mx-36 px-10 h-16">
@@ -77,4 +77,4 @@ const Header = (): JSX.Element => {
   )
 }
 
-export default Header
+export default Profile

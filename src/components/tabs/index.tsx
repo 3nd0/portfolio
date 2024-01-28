@@ -1,13 +1,19 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, lazy } from 'react'
 import { Tab } from '@headlessui/react'
 import { joinClassName } from '@/services/joinClassName'
+import { initialTimeLineInfo } from '@/const/timeLine'
+
 import type { TabCategory } from './type'
+import type { TimeLine } from '../timeLine/type'
+
+const TimeLine = lazy(() => import('@/components/timeLine'))
 
 const Tabs = (): JSX.Element => {
-  let [categories] = useState<TabCategory>({
-    Career: <button>test</button>,
+  const [timeLine, setTimeLine] = useState<TimeLine[]>(initialTimeLineInfo)
+  const [categories, setCategory] = useState<TabCategory>({
+    Career: <TimeLine {...{ timeLine }} />,
   })
 
   return (
