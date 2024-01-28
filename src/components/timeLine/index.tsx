@@ -1,11 +1,11 @@
 import { Fragment } from 'react'
 import type { TimeLine } from './type'
 
-const TimeLine = (props: { [index: string]: TimeLine[] }): JSX.Element => {
-  const { index } = props
+const TimeLine = (props: { timeLine: TimeLine[] }): JSX.Element => {
+  const { timeLine } = props
   return (
     <ol className="relative border-s border-gray-200">
-      {index.map((contents, id) => (
+      {timeLine.map((contents, id) => (
         <Fragment key={id}>
           <li className="mb-10 ms-4">
             <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white "></div>
