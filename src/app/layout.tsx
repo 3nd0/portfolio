@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import SideBar from '@/components/sideBar'
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        <SideBar />
+        {children}
+      </body>
     </html>
   )
 }
