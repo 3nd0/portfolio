@@ -7,10 +7,7 @@ const Tabs = lazy(() => import('@/components/tabs'))
 const Profile = (): JSX.Element => {
   return (
     <div className="flex flex-col gap-10">
-      <div className="mx-36 px-10 h-16">
-        <p className="font-sans text-3xl">Portfolio</p>
-      </div>
-      <div className="mx-72 px-10 flex flex-row">
+      <div className="mx-72 px-10 my-24 flex flex-row">
         <div>
           <Image
             src="/image/IMG_0850.jpg"
