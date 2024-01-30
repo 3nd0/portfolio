@@ -1,11 +1,18 @@
-import { Fragment } from 'react'
+'use client'
+
+import { Fragment, useReducer } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { socialMedia } from '@/const/NavBar/socialMedia'
 
 import type { SocialMediaInfo } from './types'
 
+const SunIcon = dynamic(() => import('@heroicons/react/24/outline/SunIcon'))
+const MoonIcon = dynamic(() => import('@heroicons/react/24/outline/MoonIcon'))
+
 const NavBar = (): JSX.Element => {
+  const [isDarkMode, isDarkModeDispatch] = useReducer((prev) => !prev, false)
   return (
     <nav className="fixed top-0 start-0 flex flex-row items-center w-full bg-white z-10 border-b border-gray-200 px-8 py-4">
       <div className="basis-1/2 flex flex-row space-x-2">
@@ -31,8 +38,21 @@ const NavBar = (): JSX.Element => {
         </span>
       </div>
 
-      {/* Social Media */}
       <div className="basis-1/2 flex flex-row justify-end space-x-4">
+        {/* Dark mode switch */}
+        <button
+          type="button"
+          className="border rounded-lg p-2.5 w-11 h-11"
+          onClick={isDarkModeDispatch}
+        >
+          {isDarkMode ? (
+            <MoonIcon width={24} height={24} />
+          ) : (
+            <SunIcon width={24} height={24} />
+          )}
+        </button>
+
+        {/* Social Media */}
         {socialMedia.map((contents: SocialMediaInfo, index: number) => (
           <Fragment key={index}>
             <Link href={contents.url}>
