@@ -15,9 +15,9 @@ const SideBar = (): JSX.Element => {
               <li>
                 <Link
                   href={contents.path}
-                  className="flex item-center p-2 text-gray-900 rounded-lg text-white hover:bg-gray-700 group"
+                  className="flex item-center p-2 text-gray-900 hover:bg-gray-200 rounded-lg group"
                 >
-                  <span className="ms-3">{contents.name}</span>
+                  <span className="ms-3 text-black">{contents.name}</span>
                 </Link>
               </li>
             </Fragment>
