@@ -14,7 +14,7 @@ const MoonIcon = dynamic(() => import('@heroicons/react/24/outline/MoonIcon'))
 const NavBar = (): JSX.Element => {
   const [isDarkMode, isDarkModeDispatch] = useReducer((prev) => !prev, false)
   return (
-    <nav className="fixed top-0 start-0 flex flex-row items-center w-full bg-white z-10 border-b border-gray-200 px-8 py-4">
+    <nav className="fixed top-0 start-0 flex flex-row items-center w-full bg-white z-50 border-b border-gray-200 px-8 py-4">
       <div className="basis-1/2 flex flex-row space-x-2">
         <Link href="/">
           <svg
