@@ -6,7 +6,7 @@ const SideBar = (): JSX.Element => {
   return (
     <aside
       id="side-bar"
-      className="fixed top-0 left-0 z-10 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      className="fixed top-0 left-0 z-40 w-64 pt-20 h-screen transition-transform -translate-x-full sm:translate-x-0"
     >
       <div className="h-full px-3 py-4 overflow-y-auto bg-gray-800">
         <ul className="space-y-2 font-medium">
