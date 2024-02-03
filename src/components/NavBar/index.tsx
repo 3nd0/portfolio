@@ -34,7 +34,7 @@ const NavBar = (): JSX.Element => {
           </svg>
         </Link>
         <span className="self-center text-2xl font-semibold whitespace-nowrap">
-          NavBar
+          Human Mechanism
         </span>
       </div>
 
