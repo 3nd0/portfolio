@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import NavBar from '@/components/NavBar'
-// import SideBar from '@/components/sideBar'
+import SideBar from '@/components/SideBar'
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <NavBar />
-        {/* <SideBar /> */}
+        <SideBar />
         {children}
       </body>
     </html>
