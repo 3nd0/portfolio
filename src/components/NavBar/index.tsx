@@ -39,19 +39,6 @@ const NavBar = (): JSX.Element => {
       </div>
 
       <div className="basis-1/2 flex flex-row justify-end space-x-4">
-        {/* Dark mode switch */}
-        <button
-          type="button"
-          className="border rounded-lg p-2.5 w-11 h-11"
-          onClick={isDarkModeDispatch}
-        >
-          {isDarkMode ? (
-            <MoonIcon width={24} height={24} />
-          ) : (
-            <SunIcon width={24} height={24} />
-          )}
-        </button>
-
         {/* Social Media */}
         {socialMedia.map((contents: SocialMediaInfo, index: number) => (
           <Fragment key={index}>
