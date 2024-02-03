@@ -1,6 +1,14 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
-import { menuList } from '@/const/sideBar/menuList'
+import { UserIcon } from '@heroicons/react/24/outline'
+
+const menuList = [
+  {
+    path: '/profile',
+    name: 'Profile',
+    icon: <UserIcon className="w-6 h-6 text-black" />,
+  },
+]
 
 const SideBar = (): JSX.Element => {
   return (
@@ -17,6 +25,7 @@ const SideBar = (): JSX.Element => {
                   href={contents.path}
                   className="flex item-center p-2 text-gray-900 hover:bg-gray-200 rounded-lg group"
                 >
+                  {contents.icon}
                   <span className="ms-3 text-black">{contents.name}</span>
                 </Link>
               </li>
