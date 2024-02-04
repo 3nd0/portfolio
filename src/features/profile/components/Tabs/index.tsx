@@ -4,15 +4,14 @@ import { useState, lazy } from 'react'
 import { Tab } from '@headlessui/react'
 import { joinClassName } from '@/services/joinClassName'
 import { initialTimeLineInfo } from '@/const/timeLine'
+import TimeLine from '../TimeLine'
+import List from '../List'
 
 import type { TabCategory } from './type'
-import type { TimeLine } from '../timeLine/type'
-
-const TimeLine = lazy(() => import('@/components/timeLine'))
-const List = lazy(() => import('@/components/list'))
+import type { TimeLineType } from '../TimeLine/type'
 
 const Tabs = (): JSX.Element => {
-  const [timeLine, setTimeLine] = useState<TimeLine[]>(initialTimeLineInfo)
+  const [timeLine, setTimeLine] = useState<TimeLineType[]>(initialTimeLineInfo)
   const [categories, setCategory] = useState<TabCategory>({
     Career: <TimeLine {...{ timeLine }} />,
     Link: <List />,

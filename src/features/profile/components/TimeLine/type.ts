@@ -1,4 +1,4 @@
-import type { DisclosuresType } from '../disclosures/type'
+import type { DisclosuresType } from '../Disclosures/type'
 
 /**
  * @property date 日付
@@ -6,7 +6,7 @@ import type { DisclosuresType } from '../disclosures/type'
  * @property description 説明
  * @property detail 詳細(タイトル, 内容)
  */
-export type TimeLine = {
+export type TimeLineType = {
   date: string
   title: string
   description: string

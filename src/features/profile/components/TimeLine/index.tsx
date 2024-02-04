@@ -1,12 +1,10 @@
 import { Fragment } from 'react'
-import { lazy } from 'react'
+import Disclosures from '../Disclosures'
 
-import type { TimeLine } from './type'
-import type { DisclosuresType } from '../disclosures/type'
+import type { TimeLineType } from './type'
+import type { DisclosuresType } from '../Disclosures/type'
 
-const Disclosures = lazy(() => import('@/components/disclosures'))
-
-const TimeLine = (props: { timeLine: TimeLine[] }): JSX.Element => {
+const TimeLine = (props: { timeLine: TimeLineType[] }): JSX.Element => {
   const { timeLine } = props
   return (
     <ol className="relative border-s border-gray-200">
