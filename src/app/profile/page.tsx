@@ -1,7 +1,5 @@
-import { lazy } from 'react'
 import SelfIntroduction from '@/features/profile/components/SelfIntroduction'
-
-const Tabs = lazy(() => import('@/components/tabs'))
+import Tabs from '@/features/profile/components/Tabs'
 
 const profile = {
   name: '遠藤 航',
