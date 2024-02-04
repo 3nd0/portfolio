@@ -14,7 +14,7 @@ const profile = {
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col mt-20 ml-64 pt-12 gap-10">
       {/* 自己紹介欄 */}
       <SelfIntroduction {...profile} />
       {/* tabs */}
